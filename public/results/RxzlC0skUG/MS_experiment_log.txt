@@ -1,0 +1,4 @@
+08/31/2020 04:40:00 PM - INFO - start script: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/pyModules/Tagger.py -i /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/RxzlC0skUG/MS_experiment.xls -c /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/RxzlC0skUG/tagger.ini -od /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/RxzlC0skUG
+08/31/2020 04:40:00 PM - INFO - Using 3 cores
+08/31/2020 04:40:00 PM - INFO - Reading input file: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/RxzlC0skUG/MS_experiment.xls
+08/31/2020 04:40:00 PM - INFO - /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/RxzlC0skUG/MS_experiment.xls was read

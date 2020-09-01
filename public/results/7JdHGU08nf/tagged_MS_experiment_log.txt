@@ -1,0 +1,2 @@
+08/31/2020 04:53:25 PM - INFO - start script: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/pyModules/Mod.py -i /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/7JdHGU08nf/tagged_MS_experiment.xls -pr /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/7JdHGU08nf/mod.ini -od /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/7JdHGU08nf
+08/31/2020 04:53:25 PM - INFO - Using 3 cores

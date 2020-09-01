@@ -1,0 +1,7 @@
+08/31/2020 05:21:21 PM - INFO - start script: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/pyModules/Table.py -i /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/QxW7b2t0h4/MS_experiment.xls -c /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/QxW7b2t0h4/table.ini -od /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/QxW7b2t0h4
+08/31/2020 05:21:21 PM - INFO - Reading input file: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/QxW7b2t0h4/MS_experiment.xls
+08/31/2020 05:21:21 PM - INFO - /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/QxW7b2t0h4/MS_experiment.xls was read
+08/31/2020 05:21:21 PM - INFO - Start collapsing table
+08/31/2020 05:21:44 PM - INFO - End collapsing table
+08/31/2020 05:21:45 PM - INFO - Write Output Table: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/QxW7b2t0h4/table_MS_experiment.xls
+08/31/2020 05:21:45 PM - INFO - end script

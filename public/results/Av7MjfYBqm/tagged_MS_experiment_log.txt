@@ -1,0 +1,12 @@
+08/31/2020 04:55:51 PM - INFO - start script: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/pyModules/Mod.py -i /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm/tagged_MS_experiment.xls -pr /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm/mod.ini -od /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm
+08/31/2020 04:55:51 PM - INFO - Using 3 cores
+08/31/2020 04:55:51 PM - INFO - Reading input file: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm/tagged_MS_experiment.xls
+08/31/2020 04:55:51 PM - INFO - /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm/tagged_MS_experiment.xls was read
+08/31/2020 04:55:51 PM - INFO - Removing rows identified by RemoveRow parameter
+08/31/2020 04:55:51 PM - INFO - Applying regular expression from regex.ini and sorting peptide aminoacids alphabetically
+08/31/2020 04:55:58 PM - INFO - Collapsing rows after metabolite name parsing
+08/31/2020 04:56:11 PM - INFO - Peptides post-processing (replace alphabetically sorted name by one of the original names)
+08/31/2020 04:56:11 PM - INFO - Parsing lipid names using Goslin
+08/31/2020 04:57:51 PM - INFO - Collapsing rows after lipid processing
+08/31/2020 04:57:58 PM - INFO - Write Output Table: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm/mod_MS_experiment.xls
+08/31/2020 04:57:58 PM - INFO - end script

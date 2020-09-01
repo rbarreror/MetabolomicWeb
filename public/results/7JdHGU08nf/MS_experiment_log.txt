@@ -1,0 +1,10 @@
+08/31/2020 04:53:17 PM - INFO - start script: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/pyModules/Tagger.py -i /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/7JdHGU08nf/MS_experiment.xls -c /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/7JdHGU08nf/tagger.ini -od /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/7JdHGU08nf
+08/31/2020 04:53:17 PM - INFO - Using 3 cores
+08/31/2020 04:53:17 PM - INFO - Reading input file: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/7JdHGU08nf/MS_experiment.xls
+08/31/2020 04:53:17 PM - INFO - /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/7JdHGU08nf/MS_experiment.xls was read
+08/31/2020 04:53:17 PM - INFO - Start food tagging
+08/31/2020 04:53:17 PM - INFO - Reading Food Table: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/pyModules/Data/food_database.tsv
+08/31/2020 04:53:17 PM - INFO - Tagging food compounds
+08/31/2020 04:53:20 PM - INFO - Finished food tagging
+08/31/2020 04:53:24 PM - INFO - Write Output Table: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/7JdHGU08nf/tagged_MS_experiment.xls
+08/31/2020 04:53:24 PM - INFO - end script

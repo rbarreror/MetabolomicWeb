@@ -1,0 +1,10 @@
+08/31/2020 04:55:43 PM - INFO - start script: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/pyModules/Tagger.py -i /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm/MS_experiment.xls -c /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm/tagger.ini -od /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm
+08/31/2020 04:55:43 PM - INFO - Using 3 cores
+08/31/2020 04:55:43 PM - INFO - Reading input file: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm/MS_experiment.xls
+08/31/2020 04:55:43 PM - INFO - /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm/MS_experiment.xls was read
+08/31/2020 04:55:43 PM - INFO - Start drug tagging
+08/31/2020 04:55:43 PM - INFO - Reading Drug Table: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/pyModules/Data/drug_database.tsv
+08/31/2020 04:55:43 PM - INFO - Tagging drug compounds
+08/31/2020 04:55:46 PM - INFO - Finished drug tagging
+08/31/2020 04:55:50 PM - INFO - Write Output Table: /home/rafael/CNIC/Metabolomica/Scripts/MetabolomicWorkflow/Web/public/results/Av7MjfYBqm/tagged_MS_experiment.xls
+08/31/2020 04:55:50 PM - INFO - end script

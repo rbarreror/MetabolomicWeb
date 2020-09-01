@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TurboPutative</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link href="assets/css/main.css" type="text/css" rel="stylesheet">
+        <style>
+
+            /* Style Main */
+
+            div.main {
+                display: grid;
+                grid-template-columns: 49% 49%;
+                grid-column-gap: 2%;
+                margin-top: 10px;
+                position: relative;
+            }
+
+            div.description {
+                /*background-color: white;*/
+                background-image: linear-gradient(to bottom right, rgba(0, 195, 255, 0.185), rgba(0, 195, 255, 0.001));
+                background-image: url("images/titleback4_mod.jpg");
+                height: 250px;
+                overflow: auto;
+            }
+
+            div.description h2{
+                text-align: center
+            }
+
+            div.description p {
+                padding: 0 30px;
+                line-height: 150%;
+                text-align: justify;
+                
+            }
+
+            /* Style Try It */
+            div.try {
+                display: grid;
+                grid-template-rows: 50% 50%;
+                /*background-color: white;*/
+                /*background-image: linear-gradient(rgba(0, 238, 255, 0.185), rgba(0, 140, 255, 0.01));*/
+                background-image: url("images/titleback2_mod.jpg");
+                background-size: cover;
+                height: 250px;
+                text-align: center;
+            }
+
+
+            #tryTitle h2 {
+                text-align: center;
+            }
+
+            #tryRef a {
+                text-align: center;
+                text-decoration: none;
+                padding: 20px 40px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            #tryRef a:hover {
+                background-color: #204922;
+            }
+
+            div.main:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+        </style>
+        
+    </head>
+    <body>
+
+        <!-- Header-->
+        <div class="header">
+            <h1>TurboPutative</h1>
+        </div>
+
+        <!-- Navigation bar -->
+        <div class="nav">
+            <a class="active" href="">Home</a>
+            <a href="">Modules</a>
+            <a href="">Settings</a>
+            <a href="turboputative.html">TurboPutative</a>
+            <a href="https://github.com/CNIC-Proteomics/MetabolomicsWorkflow" target="_blank">GitHub</a>
+        </div>
+
+        <!-- Brief Description -->
+        <div class="main">
+            <div class="description">
+                <h2>What is TurboPutative?</h2>
+                <p id="introduction">TurboPutative is a program made up of a set of tools that automate and streamline 
+                    the processing of tables with putative annotations, that is, of tables that in each 
+                    row assign a candidate metabolite to the signals detected by the mass spectrometer (feature). 
+                    The function of each tool is explained in <a href="#Modules">Modules</a> section.
+                </p>
+            </div>
+            <div class="try">
+                <div id="tryYitle">
+                    <h2>Design customized workflow</h2>
+                </div>
+                <div id="tryRef">
+                    <a href="turboputative.html">Try it!</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footText">
+                <p><a href="https://www.cnic.es/en" target="_blank">Spanish National Center for Cardiovascular Research</a></p>
+                <p>Cardiovascular Proteomics Laboratory</p>
+                <p>C/ Melchor Fernández Almagro, 3. 28029 Madrid</p>
+            </div>
+        </div>
+
+    </body>
+</html>

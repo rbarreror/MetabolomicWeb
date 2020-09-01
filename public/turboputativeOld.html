@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TurboPutative</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link href="assets/css/main.css" type="text/css" rel="stylesheet">
+        <style>
+
+            /* Style main */
+            #main {
+                width: 100%;
+                margin-top: 10px;
+                height: 250px;
+                position: relative;
+                background-color: white;
+                background-image: linear-gradient(rgba(0, 195, 255, 0.185), rgba(0, 195, 255, 0.001));
+                background-image: url("images/titleback5_mod.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            #selector {
+                position: relative;  
+                padding: 10px;              
+                margin: auto;
+                text-align: center;
+            }
+
+            .button {
+                text-decoration: none;
+                border: none;
+                font-size: 1.5em;
+                background-color: #4CAF50;
+                color: white;
+                width: 180px;
+                padding: 10px;
+                margin: 10px;
+            }
+
+            .button:hover {
+                background-color: #204922;
+                cursor: pointer;
+            }
+
+            #selected {
+                margin: 8px;
+                color: #204922;
+                font-weight: bold;
+            }
+
+            #other {
+                margin-top: 20px;
+                padding: 10px;
+            }
+
+            #other button {
+                margin: 0 10px;
+            }
+
+            /* Style form */
+            #form {
+                width: 100%;
+                margin-top: 10px;
+                height: auto;
+                position: relative;
+                background-color: white;
+
+            }
+
+            #formTitle {
+                position: relative;
+                margin: auto;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .formContainer {
+                display: grid;
+                grid-template-columns: auto;
+            }
+
+            .formContainer h3{
+                border-bottom: 1px solid grey;
+                font-size: 1.5em;
+            }
+
+            .formModule{
+                padding: 20px;
+                border-top: 1px solid #aaa;
+                border-bottom: 1px solid #aaa;
+            }
+
+
+
+            input[type=text] {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            input[type=text]:hover, input[type=text]:focus {
+                background-color: #eee;
+            }
+
+            label {
+                padding: 12px 12px 12px 0;
+                display: inline-block;
+            }
+
+            .label {
+                float: left;
+                width: 25%;
+                margin-top: 6px;
+                font-weight: bold;
+            }
+
+            .enter {
+                float: left;
+                width: 75%;
+                margin-top: 6px;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            #send {
+                text-align: center;
+            }
+
+            input[type=submit] {
+                background-color: #4CAF50;
+                text-decoration: none;
+                color: white;
+                padding: 20px;
+                border-radius: 5px;
+                border: none;
+                transition: all 0.4s ease 0s;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #204922;
+                letter-spacing: 1px;
+                box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+                transition: all 0.4s ease 0s;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <!-- Header-->
+        <div class="header">
+            <h1>TurboPutative</h1>
+        </div>
+
+        <!-- Navigation bar -->
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="">Modules</a>
+            <a href="">Settings</a>
+            <a class="active" href="">TurboPutative</a>
+            <a href="https://github.com/CNIC-Proteomics/MetabolomicsWorkflow" target="_blank">GitHub</a>
+        </div>
+
+        <!-- Workflow Selector -->
+        <div class="main" id="main">
+            <div class="selector" id="selector">
+                <h2>Select the modules to be used</h2>
+                <div class="modules">
+                    <button class="button" onclick="clickMod(this)">Tagger</button>
+                    <button class="button" onclick="clickMod(this)">Mod</button>
+                    <button class="button" onclick="clickMod(this)">Table</button>
+                    <button class="button" onclick="clickMod(this)">FeatureInfo</button>
+                </div>
+                <div id="selected"></div>
+                <div id=other>
+                    <button class="reset" onclick="window.location.href='turboputative.html'" style="cursor: pointer;">Reset</button>
+                    <button class="continue" onclick="showForm()" style="cursor: pointer;">Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <div id="form" style="display: none;">
+            <div id="formTitle">
+                <h2 style="font-size: 2em;">Settings</h2>
+            </div>
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="formContainer">
+                    <div style="padding: 40px 20px;" class="formModule">
+                        <div class="row">
+                            <div class="label">
+                                <label for="inputFile">Import input file</label>
+                            </div>
+                            <div class="enter">
+                                <input type="file" name="inputFile" id="inputFile">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formModule" id="metaParam" style="display: none;">
+                        <input type="text" id="workflow" name="workflow">
+                        <input type="text" id="jobID" name="jobID">
+                    </div> 
+                    <div class="formModule" id="formTagger">
+                        <h3>Tagger settings</h3>
+                        <div id="tagSelection">
+                            <span class=paramName style="display:block; font-weight: bold; margin-bottom: 10px;">Tag Selection</span>
+                            <div class="check">
+                                <input type="checkbox" id="Food" name="Food" value="True">
+                                <label for="Food"> Food</label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" id="Drug" name="Drug" value="True">
+                                <label for="Drug"> Drug</label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" id="MicrobialCompound" name="MicrobialCompound" value="True">
+                                <label for="MicrobialCompound"> Microbial Compound</label><br>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" id="Halogenated" name="Halogenated" value="True">
+                                <label for="Halogenated"> Halogenated</label>                         
+                            </div>
+                        </div><br>
+                        <div id="TaggerParam">
+                            <div class="row">
+                                <div class="label">
+                                    <label for="HalogenatedRegex">HalogenatedRegex</label>
+                                </div>
+                                <div class="enter">
+                                    <input type="text" name="HalogenatedRegex" id="HalogenatedRegex" value="([Ff]luor(?!ene)|[Cc]hlor(?!ophyl)|[Bb]rom|[Ii]od)">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <label for="Tagger_OutputName">Output name</label>
+                                </div>
+                                <div class="enter">
+                                    <input type="text" name="Tagger_OutputName" id="Tagger_OutputName" placeholder="Optional">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <label for="Tagger_OutputColumns">Output columns</label>
+                                </div>
+                                <div class="enter">
+                                    <input type="text" name="Tagger_OutputColumns" id="Tagger_OutputColumns" placeholder="Optional">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formModule" id="formMod">
+                        <h3>Mod settings</h3>
+                        <div class="ModParam">
+                            <div class="row">
+                                <div class="label">
+                                    <label for="RemoveRow">Remove Row Regex</label>
+                                </div>
+                                <div class="enter">
+                                    <input type="text" name="RemoveRow" id="RemoveRow" value="(?i)No compounds found for experimental mass">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <label for="Separator">Separator</label>
+                                </div>
+                                <div class="enter">
+                                    <input type="text" name="Separator" id="Separator" value="\s/\s">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <label for="AminoAcidSeparator">Aminoacid Separator</label>
+                                </div>
+                                <div class="enter">
+                                    <input type="text" name="AminoAcidSeparator" id="AminoAcidSeparator" value="\s">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <label for="Mod_OutputName">Output name</label>
+                                </div>
+                                <div class="enter">
+                                    <input type="text" name="Mod_OutputName" id="Mod_OutputName" placeholder="Optional">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    <label for="Mod_OutputColumns">Output columns</label>
+                                </div>
+                                <div class="enter">
+                                    <input type="text" name="Mod_OutputColumns" id="Mod_OutputColumns" placeholder="Optional">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formModule" id="formTable">
+                        <h3>Table settings</h3>
+                        <div class="row">
+                            <div class="label">
+                                <label for="ComparedColumns">Compared columns (Index/Name)</label>
+                            </div>
+                            <div class="enter">
+                                <input type="text" name="ComparedColumns" id="ComparedColumns" placeholder="Default: 1, 3, 4, 5, 7, 8, 9">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">
+                                <label for="ConservedColumns">Conserved columns (Index/Name)</label>
+                            </div>
+                            <div class="enter">
+                                <input type="text" name="ConservedColumns" id="ConservedColumns" placeholder="Default: 2, 6">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">
+                                <label for="Table_OutputName">Output name</label>
+                            </div>
+                            <div class="enter">
+                                <input type="text" name="Table_OutputName" id="Table_OutputName" placeholder="Optional">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">
+                                <label for="Table_OutputColumns">Output columns</label>
+                            </div>
+                            <div class="enter">
+                                <input type="text" name="Table_OutputColumns" id="Table_OutputColumns" placeholder="Optional">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formModule" id="formFeatureInfo">
+                        <h3>FeatureInfo settings</h3>
+                        <div class="row">
+                            <div class="label">
+                                <label for="N_Digits">Decimal places</label>
+                            </div>
+                            <div class="enter">
+                                <input type="text" name="N_Digits" id="N_Digits" value=4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">
+                                <label for="FeatureInfo_OutputName">Output name</label>
+                            </div>
+                            <div class="enter">
+                                <input type="text" name="FeatureInfo_OutputName" id="FeatureInfo_OutputName" placeholder="Optional">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">
+                                <label for="FeatureInfo_OutputColumns">Output columns</label>
+                            </div>
+                            <div class="enter">
+                                <input type="text" name="FeatureInfo_OutputColumns" id="FeatureInfo_OutputColumns" placeholder="Optional">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="label">
+                                <label for="FeatureInfo_file">Feature info file</label>
+                            </div>
+                            <div class="enter">
+                                <input type="file" name="FeatureInfo_file" id="FeatureInfo_file">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formModule">
+                        <div id="send">
+                            <input type="submit" name="submit">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footText">
+                <p><a href="https://www.cnic.es/en" target="_blank">Spanish National Center for Cardiovascular Research</a></p>
+                <p>Cardiovascular Proteomics Laboratory</p>
+                <p>C/ Melchor Fernández Almagro, 3. 28029 Madrid</p>
+            </div>
+        </div>
+
+
+        <script>
+
+            var selectionObj = {Tagger: 0, Mod: 0, Table: 0, FeatureInfo: 0};
+            var counter = 0;
+
+            function clickMod(element) {
+                
+                element.style.backgroundColor = "#204922";
+                selected = document.getElementById("selected");
+
+                modulePos = selectionObj[element.innerHTML];
+                if (modulePos == 0){
+                    counter += 1;
+                    selectionObj[element.innerHTML] = counter;
+                    selected.innerHTML = selected.innerHTML + element.innerHTML + " > ";
+                }
+
+                
+            }
+            
+
+            function showForm() {
+                document.getElementById("form").style.display = "block";
+                var workflow = ["", "", "", ""];
+                var moduleToNum = {Tagger: 1, Mod: 2, Table: 3, FeatureInfo: 4};
+                
+
+                for (var [key, value] of Object.entries(selectionObj)){
+
+                    if (value == 0){
+                        document.getElementById("form"+key).style.display = "none";
+                    } else {
+                        workflow[value-1] = moduleToNum[key];
+                        document.getElementById("form"+key).style.gridRow = value+1;
+                        console.log(document.getElementById("form"+key).style.gridRow);
+                    }
+                }
+
+                document.getElementById("workflow").value = workflow.toString().replaceAll(",", "");
+                document.getElementById("jobID").value = makeid(10);
+            }
+
+            function makeid(length) {
+                var result = '';
+                var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                var charactersLength = characters.length;
+                for ( var i = 0; i < length; i++ ) {
+                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                }
+                return result;
+            }
+
+        </script>
+
+    </body>
+</html>
+
+    </body>

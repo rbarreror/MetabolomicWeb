@@ -15,9 +15,9 @@ body {
     padding: 30px;
     text-align: center;
     background-color: #ffffff;
-    background-image: url("../../images/titleback.jpg");
+    background-image: url("../../images/titleback_red.jpg");
     background-size: cover;
-    color: #ffffff;
+    color: black;
 }
 
 .header h1 {
